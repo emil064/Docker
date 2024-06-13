@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: emil-site
+spec:
+  type: NodePort
+  selector:
+    app: emil-site
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30006
