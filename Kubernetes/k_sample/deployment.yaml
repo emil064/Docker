@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emil-myweb-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: emil-myweb
+  template:
+    metadata:
+      labels:
+        app: emil-myweb
+    spec:
+      containers:
+      - name: emil-myweb-container
+        image: emilaliyev/myweb:latest
+        ports:
+        - containerPort: 80
