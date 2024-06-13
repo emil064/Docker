@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emil-site-depl
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: emil-site
+  template:
+    metadata:
+      labels:
+        app: emil-site
+    spec:
+      containers:
+      - name: emil-site
+        image: emil064/emil_site:latest
+        ports:
+        - containerPort: 80
